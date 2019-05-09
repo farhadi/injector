@@ -4,7 +4,7 @@ defmodule Injector.MixProject do
   def project do
     [
       app: :injector,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -33,7 +33,7 @@ defmodule Injector.MixProject do
 
   defp package() do
     [
-      files: ["lib", "mix.exs", "README.md", "LICENSE"],
+      files: ["lib", "mix.exs", "README.md", "LICENSE", ".formatter.exs"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/farhadi/injector"}
     ]
