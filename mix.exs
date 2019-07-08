@@ -4,7 +4,7 @@ defmodule Injector.MixProject do
   def project do
     [
       app: :injector,
-      version: "0.1.1",
+      version: "0.2.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -23,7 +23,7 @@ defmodule Injector.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.20", only: :dev, runtime: false}
     ]
   end
 
