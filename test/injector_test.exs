@@ -4,6 +4,7 @@ defmodule InjectorTest do
   import Injector
 
   Application.put_env(:injector, ModuleB, InjectedModuleB)
+  Application.put_env(:injector, ModuleB.Nested, InjectedModuleBNested)
   Application.put_env(:injector, :erlang_module_b, :injected_module_b)
 
   test "inject without :as option" do
@@ -12,6 +13,14 @@ defmodule InjectorTest do
 
     inject ModuleB
     assert ModuleB == InjectedModuleB
+  end
+
+  test "inject nested module" do
+    inject ModuleA.Nested
+    assert Nested == :"Elixir.ModuleA.Nested"
+
+    inject ModuleB.Nested
+    assert Nested == InjectedModuleBNested
   end
 
   test "inject with :as option" do

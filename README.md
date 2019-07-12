@@ -18,7 +18,7 @@ end
 
 You can inject dependencies to your modules using `inject` macro with the same syntax as `alias`:
 
-```
+```elixir
 def MyApp.MyModule do
   import Injector
 
@@ -31,12 +31,12 @@ end
 ```
 
 Erlang modules can also be injected:
-```
+```elixir
 inject :mnesia, as: Mnesia
 ```
 
 Now in `config/test.exs` you can specify mock modules to be injected in test environment:
-```
+```elixir
 config :injector, [
   {MyApp.DB, MyApp.DBMock},
   {:mnesia, MnesiaMock}

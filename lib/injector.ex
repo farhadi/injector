@@ -3,8 +3,8 @@ defmodule Injector do
     raise CompileError, description: "option :as is required for injecting erlang modules"
   end
 
-  defmacro inject(module) do
-    inject_as(module, as: module)
+  defmacro inject(module = {:__aliases__, meta, aliases}) do
+    inject_as(module, as: {:__aliases__, meta, [List.last(aliases)]})
   end
 
   defmacro inject(module, as) do

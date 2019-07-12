@@ -4,7 +4,7 @@ defmodule Injector.MixProject do
   def project do
     [
       app: :injector,
-      version: "0.2.0",
+      version: "0.2.1",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -28,7 +28,7 @@ defmodule Injector.MixProject do
   end
 
   defp description() do
-    "Dependency injection for Elixir"
+    "Dependency injection for Elixir, suitable to use with Mox."
   end
 
   defp package() do
